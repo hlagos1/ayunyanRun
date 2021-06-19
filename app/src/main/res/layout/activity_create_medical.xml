@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMedicalActivity">
+
+    <ProgressBar
+        android:id="@+id/createMedical_progress"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/createMedical_lastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Lastname"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/createMedical_lastName"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/createMedical_lastNameText"
+        android:layout_marginStart="130dp"
+        android:inputType="textCapCharacters"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/createMedical_firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/createMedical_lastNameText"
+        android:padding="5dp"
+        android:text="Firstname"
+        android:inputType="textCapCharacters"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/createMedical_firstName"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/createMedical_lastNameText"
+        android:layout_alignBottom="@id/createMedical_firstNameText"
+        android:layout_marginStart="130dp"
+        android:inputType="number"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/createMedical_certifiedByText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginStart="300dp"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/createMedical_certifyingCompanyLogo"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="300dp"
+        android:layout_below="@id/createMedical_certifiedByText"
+        />
+
+    <View
+        android:id="@+id/createMedical_topline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/createMedical_firstNameText"
+        android:layout_marginTop="15dp"
+        android:background="@color/Black" />
+
+    <ScrollView
+        android:layout_below="@id/createMedical_topline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/createMedical_certificationDateButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Check Up Date"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/createMedical_certificationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/createMedical_certificationDateButton"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/createMedical_expiryDateButton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_certificationDateButton"
+                android:textAlignment="center"
+                android:text="Next \nCheck Up"/>
+
+            <TextView
+                android:id="@+id/createMedical_expiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/createMedical_expiryDateButton"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/createMedical_employerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_expiryDateButton"
+                android:padding="7dp"
+                android:text="Employer"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/createMedical_companySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_alignBottom="@+id/createMedical_employerText"
+                android:visibility="visible">
+
+            </Spinner>
+
+
+            <TextView
+                android:id="@+id/createMedical_serviceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:layout_below="@+id/createMedical_employerText"
+                android:padding="7dp"
+                android:text="Medical Status" />
+
+            <RadioGroup
+                android:id="@+id/createMedical_statusText"
+                android:layout_width="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_employerText"
+                android:layout_marginStart="130dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/createMedical_fitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fit to work off-shore" />
+
+                <RadioButton
+                    android:id="@+id/createMedical_unfitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unfit to work off-shore" />
+                
+                <RadioButton
+                    android:id="@+id/createMedical_tempFitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temporary Fit to work off-shore" />
+
+                <RadioButton
+                    android:id="@+id/createMedical_tempUnfitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temporary Unfit to work off-shore" />
+
+            </RadioGroup>
+
+
+
+            <TextView
+                android:id="@+id/createMedical_lengthText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/createMedical_statusText"
+                android:padding="7dp"
+                android:text="Hepa B AntiBody" />
+
+            <RadioGroup
+                android:id="@+id/createMedical_hepaText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_statusText"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="130dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/createMedical_noHepaButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No antibodies for Hepatitis B, vaccination strongly recommended" />
+
+                <RadioButton
+                    android:id="@+id/createMedical_hepaButton"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Antibodies for Hepatitis B, vaccination not necessary" />
+
+            </RadioGroup>
+
+
+
+
+            <TextView
+                android:id="@+id/createMedical_latitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/createMedical_hepaText"
+                android:padding="7dp"
+                android:text="Follow Up"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/createMedical_followUpText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_hepaText"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="130dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/createMedical_followUpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Required \n(See Next Checkup Date)" />
+
+                <RadioButton
+                    android:id="@+id/createMedical_asapButton"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASAP" />                
+                
+                <RadioButton
+                    android:id="@+id/createMedical_naButton"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/createMedical_imageURLText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_followUpText"
+                android:padding="7dp"
+                android:text="@string/image_url"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/createMedical_imageURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_followUpText"
+                android:layout_marginStart="130dp"
+                android:autoLink="web"
+                android:padding="7dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/createMedical_remarksText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_imageURLText"
+                android:padding="7dp"
+                android:text="Remarks"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/createMedical_remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/createMedical_imageURLText"
+                android:layout_marginStart="130dp"
+                android:autoLink="web"
+                android:padding="7dp"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

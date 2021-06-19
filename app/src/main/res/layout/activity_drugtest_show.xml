@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowDrugTestActivity">
+
+    <ImageView
+        android:id="@+id/huetShow_opito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:src="@drawable/bhb_logo" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="10dp"
+        android:text="Drug Test"
+        android:textSize="30sp" />
+
+    <View
+        android:id="@+id/huetShow_topline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/huetShow_opito"
+        android:layout_marginTop="5dp"
+        android:background="@color/Black" />
+
+    <TextView
+        android:id="@+id/huetShow_trainingCertificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/huetShow_topline"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:text="Training Certificate"
+        android:textColor="@color/Black"
+        android:textSize="50sp" />
+
+    <ProgressBar
+        android:id="@+id/huetShow_progress"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        style="@android:style/Widget.ProgressBar.Large"
+        />
+
+    <TextView
+        android:id="@+id/huetShow_certificateCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/huetShow_trainingCertificate"
+        android:padding="7dp"
+        android:text="@string/certification"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_certificateCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/huetShow_certificateCodeText"
+        android:layout_marginStart="170dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_certificateNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/huetShow_certificateCodeText"
+        android:padding="7dp"
+        android:text="@string/serial_number"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_certificateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/huetShow_certificateCodeText"
+        android:layout_alignBaseline="@id/huetShow_certificateNumberText"
+        android:layout_marginStart="170dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/huetShow_certificateNumberText"
+        android:padding="7dp"
+        android:text="@string/first_name"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/huetShow_firstNameText"
+        android:layout_marginStart="170dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/huetShow_lastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:padding="7dp"
+        android:layout_below="@id/huetShow_firstNameText"
+        android:text="@string/last_name" />
+
+    <TextView
+        android:id="@+id/huetShow_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_lastNameText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_companyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_lastNameText"
+        android:padding="7dp"
+        android:text="@string/company" />
+
+    <TextView
+        android:id="@+id/huetShow_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_lastName"
+        android:layout_alignBaseline="@id/huetShow_companyText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_trainingDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_companyText"
+        android:padding="7dp"
+        android:text="@string/training_date" />
+
+    <TextView
+        android:id="@+id/huetShow_trainingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_trainingDateText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_expiryDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_trainingDateText"
+        android:padding="7dp"
+        android:text="@string/expiry_date" />
+
+    <TextView
+        android:id="@+id/huetShow_expiryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_expiryDateText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_trainingFacilityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_expiryDateText"
+        android:padding="7dp"
+        android:text="@string/training_facility" />
+
+    <TextView
+        android:id="@+id/huetShow_trainingFacility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_trainingFacilityText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_trainerFirstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_trainingFacilityText"
+        android:padding="7dp"
+        android:text="@string/trainer_first_name" />
+
+    <TextView
+        android:id="@+id/huetShow_trainerFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_trainerFirstNameText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_trainerLastNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_trainerFirstNameText"
+        android:padding="7dp"
+        android:text="@string/trainer_last_name" />
+
+    <TextView
+        android:id="@+id/huetShow_trainerLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_trainerLastNameText"
+        android:layout_marginStart="170dp" />
+
+    <TextView
+        android:id="@+id/huetShow_imageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@id/huetShow_trainerLastNameText"
+        android:padding="7dp"
+        android:text="@string/url" />
+
+    <TextView
+        android:id="@+id/huetShow_imageURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_alignBaseline="@id/huetShow_imageText"
+        android:autoLink="web"
+        android:layout_marginStart="170dp" />
+    
+</RelativeLayout>

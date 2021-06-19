@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowVehicleActivity">
+
+    <ProgressBar
+        android:id="@+id/showVehicle_progress"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/showVehicle_assetCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/asset_code"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/showVehicle_assetCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/showVehicle_assetCodeText"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/showVehicle_serialNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showVehicle_assetCodeText"
+        android:padding="5dp"
+        android:text="Serial Number"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/showVehicle_serialNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showVehicle_assetCodeText"
+        android:layout_alignBaseline="@id/showVehicle_serialNumberText"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/showVehicle_certificationStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:paddingTop="7dp"
+        android:text="Certification Status"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/showVehicle_certificationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showVehicle_certificationStatusText"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="5dp" />
+
+    <View
+        android:id="@+id/showVehicle_topline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/showVehicle_serialNumberText"
+        android:layout_marginTop="5dp"
+        android:background="@color/Black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showVehicle_topline">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/showVehicle_certificationDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certification Date"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showVehicle_certificationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_certificationDateText"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_expirationDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_certificationDateText"
+                android:text="Expiration Dates"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showVehicle_inspectionExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_expirationDateText"
+                android:text="Inspection"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showVehicle_inspectionExpiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_inspectionExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/showVehicle_inspectionExpiryDateStatus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="240dp"
+                android:layout_alignBottom="@id/showVehicle_inspectionExpiryDate"/>
+
+            <TextView
+                android:id="@+id/showVehicle_registrationExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_inspectionExpiryDateText"
+                android:text="Registration"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showVehicle_registrationExpiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_registrationExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/showVehicle_registrationExpiryDateStatus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="240dp"
+                android:layout_alignBottom="@id/showVehicle_registrationExpiryDate"/>
+
+            <TextView
+                android:id="@+id/showVehicle_insuranceExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_registrationExpiryDateText"
+                android:text="Insurance"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showVehicle_insuranceExpiryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_insuranceExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/showVehicle_insuranceExpiryDateStatus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="240dp"
+                android:layout_alignBottom="@id/showVehicle_insuranceExpiryDate"/>
+
+            <TextView
+                android:id="@+id/showVehicle_inspectorNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="270dp"
+                android:text="Certified By:"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_inspectorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_inspectorNameText"
+                android:layout_marginStart="300dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_jobTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_inspectorName"
+                android:layout_marginStart="300dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/showVehicle_certifyingCompanyLogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/showVehicle_jobTitle"
+                android:src="@drawable/bquick_logo"
+                android:layout_marginStart="300dp" />
+
+            <TextView
+                android:id="@+id/showVehicle_vinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_insuranceExpiryDateText"
+                android:padding="7dp"
+                android:text="VIN"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_vin"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_vinText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_engineNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_vinText"
+                android:padding="7dp"
+                android:text="Engine Number"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_engineNumber"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_engineNumberText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_plateNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_engineNumberText"
+                android:padding="7dp"
+                android:text="Plate Number"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_plateNumber"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_plateNumberText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/showVehicle_ownerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_plateNumberText"
+                android:padding="7dp"
+                android:text="@string/ownerName"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_owner"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/showVehicle_ownerText"
+                android:layout_marginStart="130dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/showVehicle_makerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_ownerText"
+                android:padding="7dp"
+                android:text="@string/maker"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_maker"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_makerText"
+                android:layout_alignBaseline="@id/showVehicle_makerText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_odometerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_makerText"
+                android:padding="7dp"
+                android:text="Odometer (km)"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_odometer"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showVehicle_odometerText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/showVehicle_toplineChecklist"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/showVehicle_odometerText"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TextView
+                android:id="@+id/showVehicle_checklistText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_toplineChecklist"
+                android:padding="7dp"
+                android:text="Check List"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_checklistStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_toplineChecklist"
+                android:layout_marginStart="330dp"
+                android:padding="7dp"
+                android:text="Status"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/showVehicle_checklist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/showVehicle_checklistText"
+                android:layout_marginStart="20dp"
+                android:background="@color/LightGrey">
+
+                //Belt
+
+                <TextView
+                    android:id="@+id/showVehicle_beltText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Check Belt for Cracks"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_belt"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_beltText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+
+                <TextView
+                    android:id="@+id/showVehicle_beltRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_beltText"
+                    android:layout_marginStart="20dp" />
+
+                //Hose
+
+                <TextView
+                    android:id="@+id/showVehicle_hoseText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_beltRemarks"
+                    android:padding="10dp"
+                    android:text="Check Hose for Leaks or Bulges"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_hose"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_hoseText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+
+
+                <TextView
+                    android:id="@+id/showVehicle_hoseRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_hoseText"
+                    android:layout_marginStart="20dp" />
+
+                //oil leak
+
+                <TextView
+                    android:id="@+id/showVehicle_oilLeakText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_hoseRemarks"
+                    android:padding="10dp"
+                    android:text="Check for Oil Leaks"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_oilLeak"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_oilLeakText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_oilLeakRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_oilLeakText"
+                    android:layout_marginStart="20dp" />
+
+                //aircon
+
+                <TextView
+                    android:id="@+id/showVehicle_airconText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_oilLeakRemarks"
+                    android:padding="10dp"
+                    android:text="Aircon"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_aircon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_airconText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+
+                <TextView
+                    android:id="@+id/showVehicle_airconRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_airconText"
+                    android:layout_marginStart="20dp" />
+
+                //wiper
+
+                <TextView
+                    android:id="@+id/showVehicle_wiperText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_airconRemarks"
+                    android:padding="10dp"
+                    android:text="Wipers"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_wiper"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_wiperText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+
+                <TextView
+                    android:id="@+id/showVehicle_wiperRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_wiperText"
+                    android:layout_marginStart="20dp" />
+
+                //headlight High Beam
+
+                <TextView
+                    android:id="@+id/showVehicle_headHiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_wiperRemarks"
+                    android:padding="10dp"
+                    android:text="Headlight High Beam"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_headHi"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_headHiText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_headHiRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_headHiText"
+                    android:layout_marginStart="20dp" />
+
+                //headlight Low Beam
+
+                <TextView
+                    android:id="@+id/showVehicle_headLoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_headHiRemarks"
+                    android:padding="10dp"
+                    android:text="Headlight Low Beam"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_headLo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_headLoText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_headLoRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_headLoText"
+                    android:layout_marginStart="20dp" />
+
+                //driving Light
+
+                <TextView
+                    android:id="@+id/showVehicle_drivingLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_headLoRemarks"
+                    android:padding="10dp"
+                    android:text="Driving Lights"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_drivingLights"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_drivingLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_drivingLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_drivingLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Turn Signal
+
+                <TextView
+                    android:id="@+id/showVehicle_turnSignalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_drivingLightsRemarks"
+
+                    android:padding="10dp"
+                    android:text="Turn Signal"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_turnSignal"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_turnSignalText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_turnSignalRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_turnSignalText"
+                    android:layout_marginStart="20dp" />
+
+                //Brake Lights
+
+                <TextView
+                    android:id="@+id/showVehicle_brakeLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_turnSignalRemarks"
+                    android:padding="10dp"
+                    android:text="Brake Lights"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_brakeLights"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_brakeLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_brakeLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_brakeLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Hazard Lights
+
+                <TextView
+                    android:id="@+id/showVehicle_hazardLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_brakeLightsRemarks"
+                    android:padding="10dp"
+                    android:text="Hazard Lights"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_hazardLights"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_hazardLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_hazardLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_hazardLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Door Lock
+
+                <TextView
+                    android:id="@+id/showVehicle_doorLocksText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_hazardLightsRemarks"
+                    android:padding="10dp"
+                    android:text="Door Locks"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_doorLocks"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_doorLocksText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_doorLocksRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_doorLocksText"
+                    android:layout_marginStart="20dp" />
+
+                //Windshield
+
+                <TextView
+                    android:id="@+id/showVehicle_windshieldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_doorLocksRemarks"
+                    android:padding="10dp"
+                    android:text="WindShield"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_windshield"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_windshieldText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_windshieldRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_windshieldText"
+                    android:layout_marginStart="20dp" />
+
+                //Windows
+
+                <TextView
+                    android:id="@+id/showVehicle_windowsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_windshieldRemarks"
+                    android:padding="10dp"
+                    android:text="Windows"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_windows"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_windowsText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_windowsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_windowsText"
+                    android:layout_marginStart="20dp" />
+
+                //Radio
+
+                <TextView
+                    android:id="@+id/showVehicle_radioText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_windowsRemarks"
+                    android:padding="10dp"
+                    android:text="Radio"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_radio"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_radioText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_radioRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_radioText"
+                    android:layout_marginStart="20dp" />
+
+                //Horn
+
+                <TextView
+                    android:id="@+id/showVehicle_hornText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_radioRemarks"
+                    android:padding="10dp"
+                    android:text="Horn"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_horn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_hornText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_hornRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_hornText"
+                    android:layout_marginStart="20dp" />
+
+                //Fire Extinguisher
+
+                <TextView
+                    android:id="@+id/showVehicle_fireExtinguisherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_hornRemarks"
+
+                    android:padding="10dp"
+                    android:text="Fire Extinguisher"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_fireExtinguisher"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_fireExtinguisherText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+
+                <TextView
+                    android:id="@+id/showVehicle_fireExtinguisherRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_fireExtinguisherText"
+                    android:layout_marginStart="20dp" />
+
+                //first aid kit
+
+                <TextView
+                    android:id="@+id/showVehicle_firstAidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_fireExtinguisherRemarks"
+                    android:padding="10dp"
+                    android:text="First Aid Kit"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_firstAid"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_firstAidText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_firstAidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_firstAidText"
+                    android:layout_marginStart="20dp" />
+
+                //Coolant
+
+                <TextView
+                    android:id="@+id/showVehicle_coolantText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_firstAidRemarks"
+                    android:padding="10dp"
+                    android:text="Coolant"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_coolant"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_coolantText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_coolantRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_coolantText"
+                    android:layout_marginStart="20dp" />
+
+                //engine oil
+
+                <TextView
+                    android:id="@+id/showVehicle_engineOilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_coolantRemarks"
+                    android:padding="10dp"
+                    android:text="Engine Oil"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_engineOil"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_engineOilText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_engineOilRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_engineOilText"
+                    android:layout_marginStart="20dp" />
+
+                //Transmission Oil
+
+                <TextView
+                    android:id="@+id/showVehicle_transmissionOilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_engineOilRemarks"
+                    android:padding="10dp"
+                    android:text="Transmission Oil"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_transmissionOil"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_transmissionOilText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_transmissionOilRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_transmissionOilText"
+                    android:layout_marginStart="20dp" />
+
+                //power steering
+
+                <TextView
+                    android:id="@+id/showVehicle_powerSteeringText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_transmissionOilRemarks"
+                    android:padding="10dp"
+                    android:text="Power Steering Oil"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_powerSteering"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_powerSteeringText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_powerSteeringRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_powerSteeringText"
+                    android:layout_marginStart="20dp" />
+
+                //brake fluid
+
+                <TextView
+                    android:id="@+id/showVehicle_brakeFluidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_powerSteeringRemarks"
+                    android:padding="10dp"
+                    android:text="Brake Fluid"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_brakeFluid"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_brakeFluidText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_brakeFluidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_brakeFluidText"
+                    android:layout_marginStart="20dp" />
+
+                //washerFluid
+
+                <TextView
+                    android:id="@+id/showVehicle_washerFluidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showVehicle_brakeFluidRemarks"
+                    android:padding="10dp"
+                    android:text="Washer Fluid"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/showVehicle_washerFluid"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/showVehicle_washerFluidText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"/>
+
+                <TextView
+                    android:id="@+id/showVehicle_washerFluidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/showVehicle_washerFluidText"
+                    android:layout_marginStart="20dp" />
+
+                />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/showVehicle_latitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_checklist"
+                android:layout_marginTop="20dp"
+                android:padding="7dp"
+                android:text="@string/Latitude"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/showVehicle_latitudeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_longitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_latitudeText"
+                android:padding="7dp"
+                android:text="@string/Longitude"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/showVehicle_longitudeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_imageURLText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_longitudeText"
+                android:padding="7dp"
+                android:text="@string/image_url"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showVehicle_imageURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showVehicle_longitudeText"
+                android:layout_marginStart="130dp"
+                android:autoLink="web"
+                android:padding="7dp"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/showVehicle_map_search"
+                android:layout_width="95dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_toStartOf="@id/showVehicle_updateLocation"
+                android:text="@string/last_location"
+                android:layout_below="@id/showVehicle_checklist"/>
+
+            <Button
+                android:id="@+id/showVehicle_updateLocation"
+                android:layout_width="95dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/update_location"
+                android:textColor="@color/Green"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/showVehicle_checklist"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

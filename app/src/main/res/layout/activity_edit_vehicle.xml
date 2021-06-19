@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditVehicleActivity">
+
+    <ProgressBar
+        android:id="@+id/editVehicle_progress"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/editVehicle_vehicleCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Vehicle Code"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editVehicle_vehicleCode"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editVehicle_vehicleCodeText"
+        android:layout_marginStart="130dp"
+        android:inputType="textCapCharacters"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/editVehicle_vehicleNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editVehicle_vehicleCodeText"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Vehicle Number"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editVehicle_vehicleNumber"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editVehicle_vehicleCodeText"
+        android:layout_alignBaseline="@id/editVehicle_vehicleNumberText"
+        android:layout_marginStart="130dp"
+        android:inputType="number"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/editVehicle_search"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/search_instructions"
+        android:layout_toStartOf="@id/editVehicle_scan"/>
+
+    <Button
+        android:id="@+id/editVehicle_scan"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/qrscan_instructions"
+        android:layout_alignParentEnd="true"/>
+
+    <View
+        android:id="@+id/editVehicle_topline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/editVehicle_scan"
+        android:layout_marginTop="5dp"
+        android:background="@color/Black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editVehicle_topline">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/editVehicle_certificationDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certification Date"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/editVehicle_certificationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_certificationDateText"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_expirationDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_certificationDateText"
+                android:text="Expiration Dates"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/editVehicle_inspectionExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_expirationDateText"
+                android:text="Inspection"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/editVehicle_inspectionExpiryDate"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_inspectionExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_registrationExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_inspectionExpiryDateText"
+                android:text="Registration"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/editVehicle_registrationExpiryDate"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_registrationExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_insuranceExpiryDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_registrationExpiryDateText"
+                android:text="Insurance"
+                android:layout_marginStart="20dp"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/editVehicle_insuranceExpiryDate"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_insuranceExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textColor="@color/Blue"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_lastInspectorNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="270dp"
+                android:text="Last Inspection By:"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_lastInspectorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_lastInspectorNameText"
+                android:layout_marginStart="300dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_lastJobTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_lastInspectorName"
+                android:layout_marginStart="300dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/editVehicle_lastCertifyingCompanyLogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/editVehicle_lastJobTitle"
+                android:src="@drawable/bquick_logo"
+                android:layout_marginStart="300dp" />
+
+            <TextView
+                android:id="@+id/editVehicle_vinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_insuranceExpiryDateText"
+                android:padding="7dp"
+                android:text="VIN"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_vin"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_vinText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_engineNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_vinText"
+                android:padding="7dp"
+                android:text="Engine Number"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_engineNumber"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_engineNumberText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_plateNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_engineNumberText"
+                android:padding="7dp"
+                android:text="Plate Number"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_plateNumber"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_plateNumberText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/editVehicle_ownerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_plateNumberText"
+                android:padding="7dp"
+                android:text="@string/ownerName"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_owner"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/editVehicle_ownerText"
+                android:layout_marginStart="130dp"
+                android:visibility="visible">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/editVehicle_makerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_ownerText"
+                android:padding="7dp"
+                android:text="@string/maker"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_maker"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_makerText"
+                android:layout_alignBaseline="@id/editVehicle_makerText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_odometerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_makerText"
+                android:padding="7dp"
+                android:text="Odometer (km)"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editVehicle_odometer"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_odometerText"
+                android:layout_marginStart="130dp"
+                android:inputType="numberDecimal"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/editVehicle_checklistText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_odometerText"
+                android:padding="7dp"
+                android:text="Check List"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_below="@id/editVehicle_odometer"
+                android:layout_marginStart="385dp"
+                android:src="@drawable/ok" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/editVehicle_odometer"
+                android:layout_marginStart="330dp"
+                android:src="@drawable/notok" />
+
+            <RelativeLayout
+                android:id="@+id/editVehicle_checklist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/editVehicle_checklistText"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/LightGrey">
+
+                //Belt
+                <TextView
+                    android:id="@+id/editVehicle_beltText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Check Belt for Cracks"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_beltSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_beltText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_beltRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_beltText"
+                    android:layout_marginStart="20dp" />
+
+                //Hose
+
+                <TextView
+                    android:id="@+id/editVehicle_hoseText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_beltRemarks"
+                    android:text="Check Hose for Leaks or Bulges"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_hoseSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_hoseText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_hoseRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_hoseText"
+                    android:layout_marginStart="20dp" />
+
+                //oil leak
+
+                <TextView
+                    android:id="@+id/editVehicle_oilLeakText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_hoseRemarks"
+
+                    android:text="Check for Oil Leaks"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_oilLeakSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_oilLeakText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_oilLeakRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_oilLeakText"
+                    android:layout_marginStart="20dp" />
+
+                //aircon
+
+                <TextView
+                    android:id="@+id/editVehicle_airconText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_oilLeakRemarks"
+
+                    android:text="Aircon"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_airconSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_airconText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_airconRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_airconText"
+                    android:layout_marginStart="20dp" />
+
+                //wiper
+
+                <TextView
+                    android:id="@+id/editVehicle_wiperText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_airconRemarks"
+
+                    android:text="Wipers"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_wiperSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_wiperText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_wiperRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_wiperText"
+                    android:layout_marginStart="20dp" />
+
+                //headlight High Beam
+
+                <TextView
+                    android:id="@+id/editVehicle_headHiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_wiperRemarks"
+
+                    android:text="Headlight High Beam"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_headHiSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_headHiText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_headHiRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_headHiText"
+                    android:layout_marginStart="20dp" />
+
+                //headlight Low Beam
+
+                <TextView
+                    android:id="@+id/editVehicle_headLoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_headHiRemarks"
+
+                    android:text="Headlight Low Beam"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_headLoSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_headLoText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_headLoRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_headLoText"
+                    android:layout_marginStart="20dp" />
+
+                //driving Light
+
+                <TextView
+                    android:id="@+id/editVehicle_drivingLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_headLoRemarks"
+
+                    android:text="Driving Lights"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_drivingLightsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_drivingLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_drivingLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_drivingLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Turn Signal
+
+                <TextView
+                    android:id="@+id/editVehicle_turnSignalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_drivingLightsRemarks"
+
+                    android:text="Turn Signal"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_turnSignalSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_turnSignalText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_turnSignalRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_turnSignalText"
+                    android:layout_marginStart="20dp" />
+
+                //Brake Lights
+
+                <TextView
+                    android:id="@+id/editVehicle_brakeLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_turnSignalRemarks"
+
+                    android:text="Brake Lights"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_brakeLightsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_brakeLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_brakeLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_brakeLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Hazard Lights
+
+                <TextView
+                    android:id="@+id/editVehicle_hazardLightsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_brakeLightsRemarks"
+
+                    android:text="Hazard Lights"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_hazardLightsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_hazardLightsText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_hazardLightsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_hazardLightsText"
+                    android:layout_marginStart="20dp" />
+
+                //Door Lock
+
+                <TextView
+                    android:id="@+id/editVehicle_doorLocksText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_hazardLightsRemarks"
+
+                    android:text="Door Locks"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_doorLocksSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_doorLocksText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_doorLocksRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_doorLocksText"
+                    android:layout_marginStart="20dp" />
+
+                //Windshield
+
+                <TextView
+                    android:id="@+id/editVehicle_windshieldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_doorLocksRemarks"
+
+                    android:text="WindShield"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_windshieldSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_windshieldText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_windshieldRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_windshieldText"
+                    android:layout_marginStart="20dp" />
+
+                //Windows
+
+                <TextView
+                    android:id="@+id/editVehicle_windowsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_windshieldRemarks"
+
+                    android:text="Windows"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_windowsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_windowsText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_windowsRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_windowsText"
+                    android:layout_marginStart="20dp" />
+
+                //Radio
+
+                <TextView
+                    android:id="@+id/editVehicle_radioText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_windowsRemarks"
+
+                    android:text="Radio"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_radioSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_radioText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_radioRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_radioText"
+                    android:layout_marginStart="20dp" />
+
+                //Horn
+
+                <TextView
+                    android:id="@+id/editVehicle_hornText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_radioRemarks"
+
+                    android:text="Horn"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_hornSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_hornText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_hornRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_hornText"
+                    android:layout_marginStart="20dp" />
+
+                //Fire Extinguisher
+
+                <TextView
+                    android:id="@+id/editVehicle_fireExtinguisherText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_hornRemarks"
+
+                    android:text="Fire Extinguisher"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_fireExtinguisherSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_fireExtinguisherText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+
+                <EditText
+                    android:id="@+id/editVehicle_fireExtinguisherRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_fireExtinguisherText"
+                    android:layout_marginStart="20dp" />
+
+                //first aid kit
+
+                <TextView
+                    android:id="@+id/editVehicle_firstAidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_fireExtinguisherRemarks"
+
+                    android:text="First Aid Kit"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_firstAidSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_firstAidText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_firstAidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_firstAidText"
+                    android:layout_marginStart="20dp" />
+
+                //Coolant
+
+                <TextView
+                    android:id="@+id/editVehicle_coolantText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_firstAidRemarks"
+
+                    android:text="Coolant"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_coolantSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_coolantText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_coolantRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_coolantText"
+                    android:layout_marginStart="20dp" />
+
+                //engine oil
+
+                <TextView
+                    android:id="@+id/editVehicle_engineOilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_coolantRemarks"
+
+                    android:text="Engine Oil"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_engineOilSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_engineOilText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_engineOilRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_engineOilText"
+                    android:layout_marginStart="20dp" />
+
+                //Transmission Oil
+
+                <TextView
+                    android:id="@+id/editVehicle_transmissionOilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_engineOilRemarks"
+
+                    android:text="Transmission Oil"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_transmissionOilSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_transmissionOilText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_transmissionOilRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_transmissionOilText"
+                    android:layout_marginStart="20dp" />
+
+                //power steering
+
+                <TextView
+                    android:id="@+id/editVehicle_powerSteeringText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_transmissionOilRemarks"
+
+                    android:text="Power Steering Oil"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_powerSteeringSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_powerSteeringText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_powerSteeringRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_powerSteeringText"
+                    android:layout_marginStart="20dp" />
+
+                //brake fluid
+
+                <TextView
+                    android:id="@+id/editVehicle_brakeFluidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_powerSteeringRemarks"
+
+                    android:text="Brake Fluid"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_brakeFluidSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_brakeFluidText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_brakeFluidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_brakeFluidText"
+                    android:layout_marginStart="20dp" />
+
+                //washerFluid
+
+                <TextView
+                    android:id="@+id/editVehicle_washerFluidText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editVehicle_brakeFluidRemarks"
+
+                    android:text="Washer Fluid"
+                    android:textSize="15sp" android:padding = "10dp"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/editVehicle_washerFluidSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editVehicle_washerFluidText"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"
+                    android:theme="@style/SwitchCompatTheme" />
+
+                <EditText
+                    android:id="@+id/editVehicle_washerFluidRemarks"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editVehicle_washerFluidText"
+                    android:layout_marginStart="20dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/editVehicle_latitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_checklist"
+                android:padding="7dp"
+                android:text="@string/Latitude"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editVehicle_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_latitudeText"
+                android:layout_marginStart="130dp"
+                android:inputType="numberSigned|numberDecimal"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_longitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_latitudeText"
+                android:padding="7dp"
+                android:text="@string/Longitude"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editVehicle_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/editVehicle_longitudeText"
+                android:layout_marginStart="130dp"
+                android:inputType="numberSigned|numberDecimal"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/editVehicle_imageURLText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_longitudeText"
+                android:padding="7dp"
+                android:text="@string/image_url"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editVehicle_imageURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editVehicle_longitudeText"
+                android:layout_marginStart="130dp"
+                android:autoLink="web"
+                android:padding="7dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/editVehicle_mapDisplay"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/editVehicle_checklist"
+                android:layout_toStartOf="@id/editVehicle_updateLocation"
+                android:paddingEnd="5dp"
+                android:src="@drawable/google_map_icon" />
+
+            <Button
+                android:id="@+id/editVehicle_updateLocation"
+                android:layout_width="95dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/editVehicle_checklist"
+                android:layout_alignParentEnd="true"
+                android:text="Set To My Location"
+                android:textColor="@color/Green" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

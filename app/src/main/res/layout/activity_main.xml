@@ -1,0 +1,3861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/AntiqueWhite"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".MainActivity">
+
+    //Results Windows
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <ProgressBar
+            android:id="@+id/main_progress"
+            style="@android:style/Widget.ProgressBar.Large"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/main_searchHint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="QR Scan, Search or Tap NFC"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            android:visibility="gone" />
+        //Asset Code
+
+        <TextView
+            android:id="@+id/main_assetCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textSize="35sp" />
+
+        <LinearLayout
+            android:id="@+id/main_plateNumberBackground"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:id="@+id/main_countryOrInstalledOn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:gravity="bottom|center_horizontal|fill_vertical"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/main_provincialCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            //Serial Number
+
+            <TextView
+                android:id="@+id/main_serialNumber"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            //Province of Registration / Installed On
+
+            <TextView
+                android:id="@+id/main_provinceOfRegistrationOrWheelWell"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|top|fill_vertical"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        //Status
+
+        <TextView
+            android:id="@+id/main_statusText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/White"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    //Results label
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="ASSET CODE"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="SERIAL NUMBER"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="STATUS"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+    //Line
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@color/Black" />
+    //Action Buttons
+
+    <LinearLayout
+        android:id="@+id/main_actionButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="5">
+
+        //Map Asset Location Button
+
+        <Button
+            android:id="@+id/main_mapSearch"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/assetlocation"
+            android:gravity="center_horizontal|bottom"
+            android:text="ASSET\nLOCATION"
+            android:textColor="@color/Black"
+            android:textSize="9sp" />
+
+        //Update Location Button
+
+        <Button
+            android:id="@+id/main_updateLocation"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/updatelocation"
+            android:gravity="center_horizontal|bottom"
+            android:text="UPDATE\nLOCATION"
+            android:textColor="@color/Black"
+            android:textSize="9sp" />
+
+        //Email Maintenance Button
+
+        <Button
+            android:id="@+id/main_assetOwnerEmailButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/maintenanceemailicon"
+            android:gravity="center_horizontal|bottom"
+            android:text="EMAIL\nMAINTENANCE"
+            android:textColor="@color/Black"
+            android:textSize="9sp" />
+
+        //Call Maintenance Button
+
+        <Button
+            android:id="@+id/main_assetOwnerPhoneNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/maintenancecallicon"
+            android:gravity="center_horizontal|bottom"
+            android:text="CALL\nMAINTENANCE"
+            android:textColor="@color/Black"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/main_assetOwnerLineIDButton"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/maintenancelineicon"
+            android:gravity="center_horizontal|bottom"
+            android:text="LINE\nMAINTENANCE"
+            android:textColor="@color/Black"
+            android:textSize="9sp" />
+
+
+    </LinearLayout>
+    //Scrollable Contents
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            //Login
+
+            <LinearLayout
+                android:id="@+id/main_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Email Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/main_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Password Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/main_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Odometer Label -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/main_currentOdometer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Current Odometer"
+                        android:inputType="number" />
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/main_newUser"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="No account yet? Create one"
+                    android:textColor="@color/Blue"
+                    android:textSize="16dip" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/main_leftButton"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:gravity="bottom|center"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/main_rightButton"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".5"
+                        android:gravity="bottom|center"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //Instructions
+
+            <LinearLayout
+                android:id="@+id/main_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/instructions"
+                    android:textColor="@color/RoyalBlue"
+                    android:textSize="25sp"
+                    android:textStyle="bold|italic" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/nfc_instructions" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="10dp"
+                        android:text="Tap NFC tag on asset with your NFC enabled phone"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/qrscan_instructions" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="10dp"
+                        android:text="Click on QR scan code button below and scan asset QR code"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/search_instructions" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="10dp"
+                        android:text="Enter the equipment ID of asset on the search box"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            //Line
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_margin="10dp"
+                android:background="@color/Black" />
+
+            //Search Window
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <ImageView
+                    android:id="@+id/main_qrscanIcon"
+                    android:layout_width="45dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/qrscan_instructions" />
+
+                <EditText
+                    android:id="@+id/main_equipmentIDSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="8"
+                    android:background="@color/LightGrey"
+                    android:inputType="textCapCharacters"
+                    android:paddingLeft="20sp"
+                    android:text="15-2096"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/Black"
+                    android:textSize="40sp" />
+
+                <ImageView
+                    android:id="@+id/main_searchIcon"
+                    android:layout_width="45dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/LightGrey"
+                    android:src="@drawable/search" />
+
+            </LinearLayout>
+
+            //Line
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_margin="10dp"
+                android:background="@color/Black" />
+
+            //Disclaimer
+
+            <TextView
+                android:id="@+id/main_disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/disclaimer"
+                android:visibility="gone" />
+
+            //Show Vehicle
+
+            <LinearLayout
+                android:id="@+id/main_showVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                //First Row Of Buttons
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    //Certification Status Icon
+
+                    <Button
+                        android:id="@+id/main_showVehicle_certificationStatusIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="CERTIFICATION"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    //Maintenance Status Icon
+
+                    <Button
+                        android:id="@+id/main_showVehicle_maintenanceStatusIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="MAINTENANCE"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    //Registration Status Icon
+
+                    <Button
+                        android:id="@+id/main_showVehicle_registrationStatusIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="REGISTRATION"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    //Insurance Status Icon
+
+                    <Button
+                        android:id="@+id/main_showVehicle_insuranceStatusIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="INSURANCE"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    //Upper Tire Display
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="62dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1">
+
+                        //Four Wheeler Front Tire Status Icon
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_fourWheelerFrontTireIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/Gray"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_frontLeftWheelIcon"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="FL"
+                                android:textColor="@color/White"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_frontRightWheelIcon"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="FR"
+                                android:textColor="@color/White"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        //Tractor Head Tire Status Icon
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tractorHeadIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/Gray"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:weightSum="7">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireOneIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireTwoIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="2"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireThreeIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="3"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireFourIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="4"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireFiveIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="5"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireSixIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="6"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireSevenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="7"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireEightIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="8"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireNineIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="9"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireTenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="10"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/main_showVehicleTractorSpareWheelIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:letterSpacing="0"
+                                android:text="TRACTOR TIRES"
+                                android:textColor="@color/White"
+                                android:textSize="8sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                //Second Row of Buttons
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    // Future Notifications Button
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="CERTIFICATION"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    // Future Notifications Button
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="MAINTENANCE"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    // Future Notifications Button
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="REGISTRATION"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    // Future Notifications Button
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/questionmark"
+                        android:gravity="bottom|center"
+                        android:text="INSURANCE"
+                        android:textColor="@color/White"
+                        android:textSize="8sp" />
+
+                    //Lower Tire Display
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="62dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1">
+
+                        // Four Wheeler Rear Tire Icon
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_fourWheelerRearTireIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/Gray"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:weightSum="5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="4"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_rearLeftWheelIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="RL"
+                                    android:textColor="@color/White"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_rearRightWheelIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="RR"
+                                    android:textColor="@color/White"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_spareWheelIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:letterSpacing="0"
+                                android:text="SPARE"
+                                android:textColor="@color/White"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        // Trailer Tire Status Icon
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_trailerIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/Gray"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            android:weightSum="7">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_trailerElevenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="11"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_trailerTwelveIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="12"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_trailerThirteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="13"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_trailerFourteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="14"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireFifteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="15"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorSixteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="16"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireSeventeenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="17"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireEighteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="18"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireNineteenIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="19"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireTwentyIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="20"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireTwentyOneIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="21"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/main_showVehicle_tractorTireTwentyTwoIcon"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="22"
+                                    android:textColor="@color/White"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="TRAILER TIRES"
+                                android:textColor="@color/White"
+                                android:textSize="8sp" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_expirationDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="7dp"
+                        android:text="Expiration Dates"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_performedByText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_expirationDateText"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center"
+                        android:text="Performed By:"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_certificationExpiryDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_expirationDateText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Certification"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_certificationExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_certificationExpiryDateText"
+                        android:layout_marginStart="125dp"
+                        android:textColor="@color/Blue"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_maintenanceExpiryDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_certificationExpiryDateText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Maintenance"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_maintenanceExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_maintenanceExpiryDateText"
+                        android:layout_marginStart="125dp"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_maintenancePerformedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_maintenanceExpiryDate"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="5dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_registrationExpiryDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_maintenanceExpiryDateText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Registration"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_registrationExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_registrationExpiryDateText"
+                        android:layout_marginStart="125dp"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_registrationPerformedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_registrationExpiryDate"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="5dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_insuranceExpiryDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_registrationExpiryDateText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Insurance"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_insuranceExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_insuranceExpiryDateText"
+                        android:layout_marginStart="125dp"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_insurancePerformedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_insuranceExpiryDate"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="5dp"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_certificationPerformedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_certificationExpiryDate"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="5dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_vinText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_insuranceExpiryDateText"
+                        android:padding="7dp"
+                        android:text="VIN"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_vin"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_vinText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_engineNumberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_vinText"
+                        android:padding="7dp"
+                        android:text="Engine Number"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_engineNumber"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_engineNumberText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_plateNumberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_engineNumberText"
+                        android:padding="7dp"
+                        android:text="Plate Number"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_plateNumber"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_plateNumberText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_plateNumberText"
+                        android:padding="7dp"
+                        android:text="@string/ownerName"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerName"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/main_showVehicle_assetOwnerNameText"
+                        android:layout_marginStart="120dp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerPhoneNumberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_assetOwnerNameText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Phone Number"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerPhoneNumber"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/main_showVehicle_assetOwnerPhoneNumberText"
+                        android:layout_marginStart="120dp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerEmailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_assetOwnerPhoneNumberText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="Email"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerEmail"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/main_showVehicle_assetOwnerEmailText"
+                        android:layout_marginStart="120dp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerLineIDText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_assetOwnerEmailText"
+                        android:layout_marginStart="15dp"
+                        android:padding="7dp"
+                        android:text="LINE ID"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_assetOwnerLineID"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/main_showVehicle_assetOwnerLineIDText"
+                        android:layout_marginStart="120dp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_makerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_assetOwnerLineIDText"
+                        android:padding="7dp"
+                        android:text="@string/maker"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_maker"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_makerText"
+                        android:layout_alignBaseline="@id/main_showVehicle_makerText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_odometerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_makerText"
+                        android:padding="7dp"
+                        android:text="Odometer (km)"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_odometer"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showVehicle_odometerText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:id="@+id/main_showVehicle_toplineChecklist"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/main_showVehicle_odometerText"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_checklistText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_toplineChecklist"
+                        android:padding="7dp"
+                        android:text="Check List"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/main_showVehicle_checklistStatusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showVehicle_toplineChecklist"
+                        android:layout_alignParentEnd="true"
+                        android:padding="7dp"
+                        android:text="Status"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/main_showVehicle_checklist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/main_showVehicle_checklistText"
+                        android:layout_marginStart="20dp"
+                        android:background="@color/LightGrey">
+
+                        //Belt
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_beltText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Check Belt for Cracks"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_belt"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_beltText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_beltRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_beltText"
+                            android:layout_marginStart="20dp" />
+
+                        //Hose
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hoseText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_beltRemarks"
+                            android:padding="10dp"
+                            android:text="Check Hose for Leaks or Bulges"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_hose"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_hoseText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hoseRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_hoseText"
+                            android:layout_marginStart="20dp" />
+
+                        //oil leak
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_oilLeakText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_hoseRemarks"
+                            android:padding="10dp"
+                            android:text="Check for Oil Leaks"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_oilLeak"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_oilLeakText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_oilLeakRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_oilLeakText"
+                            android:layout_marginStart="20dp" />
+
+                        //aircon
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_airconText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_oilLeakRemarks"
+                            android:padding="10dp"
+                            android:text="Aircon"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_aircon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_airconText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_airconRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_airconText"
+                            android:layout_marginStart="20dp" />
+
+                        //wiper
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_wiperText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_airconRemarks"
+                            android:padding="10dp"
+                            android:text="Wipers"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_wiper"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_wiperText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_wiperRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_wiperText"
+                            android:layout_marginStart="20dp" />
+
+                        //headlight High Beam
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_headHiText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_wiperRemarks"
+                            android:padding="10dp"
+                            android:text="Headlight High Beam"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_headHi"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_headHiText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_headHiRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_headHiText"
+                            android:layout_marginStart="20dp" />
+
+                        //headlight Low Beam
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_headLoText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_headHiRemarks"
+                            android:padding="10dp"
+                            android:text="Headlight Low Beam"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_headLo"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_headLoText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_headLoRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_headLoText"
+                            android:layout_marginStart="20dp" />
+
+                        //driving Light
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_drivingLightsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_headLoRemarks"
+                            android:padding="10dp"
+                            android:text="Driving Lights"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_drivingLights"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_drivingLightsText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_drivingLightsRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_drivingLightsText"
+                            android:layout_marginStart="20dp" />
+
+                        //Turn Signal
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_turnSignalText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_drivingLightsRemarks"
+
+                            android:padding="10dp"
+                            android:text="Turn Signal"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_turnSignal"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_turnSignalText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_turnSignalRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_turnSignalText"
+                            android:layout_marginStart="20dp" />
+
+                        //Brake Lights
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeLightsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_turnSignalRemarks"
+                            android:padding="10dp"
+                            android:text="Brake Lights"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_brakeLights"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_brakeLightsText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeLightsRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_brakeLightsText"
+                            android:layout_marginStart="20dp" />
+
+                        //Hazard Lights
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hazardLightsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_brakeLightsRemarks"
+                            android:padding="10dp"
+                            android:text="Hazard Lights"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_hazardLights"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_hazardLightsText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hazardLightsRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_hazardLightsText"
+                            android:layout_marginStart="20dp" />
+
+                        //Door Lock
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_doorLocksText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_hazardLightsRemarks"
+                            android:padding="10dp"
+                            android:text="Door Locks"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_doorLocks"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_doorLocksText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_doorLocksRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_doorLocksText"
+                            android:layout_marginStart="20dp" />
+
+                        //Windshield
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_windshieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_doorLocksRemarks"
+                            android:padding="10dp"
+                            android:text="WindShield"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_windshield"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_windshieldText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_windshieldRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_windshieldText"
+                            android:layout_marginStart="20dp" />
+
+                        //Windows
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_windowsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_windshieldRemarks"
+                            android:padding="10dp"
+                            android:text="Windows"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_windows"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_windowsText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_windowsRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_windowsText"
+                            android:layout_marginStart="20dp" />
+
+                        //Radio
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_radioText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_windowsRemarks"
+                            android:padding="10dp"
+                            android:text="Radio"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_radio"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_radioText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_radioRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_radioText"
+                            android:layout_marginStart="20dp" />
+
+                        //Horn
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hornText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_radioRemarks"
+                            android:padding="10dp"
+                            android:text="Horn"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_horn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_hornText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_hornRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_hornText"
+                            android:layout_marginStart="20dp" />
+
+                        //Fire Extinguisher
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_fireExtinguisherText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_hornRemarks"
+
+                            android:padding="10dp"
+                            android:text="Fire Extinguisher"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_fireExtinguisher"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_fireExtinguisherText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_fireExtinguisherRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_fireExtinguisherText"
+                            android:layout_marginStart="20dp" />
+
+                        //first aid kit
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_firstAidText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_fireExtinguisherRemarks"
+                            android:padding="10dp"
+                            android:text="First Aid Kit"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_firstAid"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_firstAidText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_firstAidRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_firstAidText"
+                            android:layout_marginStart="20dp" />
+
+                        //Coolant
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_coolantText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_firstAidRemarks"
+                            android:padding="10dp"
+                            android:text="Coolant"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_coolantSpecs"
+                            android:layout_width="120sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_coolantText"
+                            android:layout_marginStart="120dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_coolantVolume"
+                            android:layout_width="90sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_coolantText"
+                            android:layout_marginStart="240dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_coolant"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_coolantText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_coolantRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_coolantText"
+                            android:layout_marginStart="20dp" />
+
+                        //engine oil
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_engineOilText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_coolantRemarks"
+                            android:padding="10dp"
+                            android:text="Engine Oil"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_engineOilSpecs"
+                            android:layout_width="120sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_engineOilText"
+                            android:layout_marginStart="120dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_engineOilVolume"
+                            android:layout_width="90sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_engineOilText"
+                            android:layout_marginStart="240dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_engineOil"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_engineOilText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_engineOilRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_engineOilText"
+                            android:layout_marginStart="20dp" />
+
+                        //Transmission Oil
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_transmissionOilText"
+                            android:layout_width="115sp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_engineOilRemarks"
+                            android:padding="10dp"
+                            android:text="Transmission Oil"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_transmissionOilSpecs"
+                            android:layout_width="120sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_transmissionOilText"
+                            android:layout_marginStart="120dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_transmissionOilVolume"
+                            android:layout_width="90sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_transmissionOilText"
+                            android:layout_marginStart="240dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_transmissionOil"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_transmissionOilText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_transmissionOilRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_transmissionOilText"
+                            android:layout_marginStart="20dp" />
+
+                        //power steering
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_powerSteeringFluidText"
+                            android:layout_width="115sp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_transmissionOilRemarks"
+                            android:padding="10dp"
+                            android:text="Power Steering Fluid"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_powerSteeringFluidSpecs"
+                            android:layout_width="120sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_powerSteeringFluidText"
+                            android:layout_marginStart="120dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_powerSteeringFluidVolume"
+                            android:layout_width="90sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_powerSteeringFluidText"
+                            android:layout_marginStart="240dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_powerSteeringFluid"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_powerSteeringFluidText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_powerSteeringFluidRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_powerSteeringFluidText"
+                            android:layout_marginStart="20dp" />
+
+                        //brake fluid
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeFluidText"
+                            android:layout_width="115sp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_powerSteeringFluidRemarks"
+                            android:padding="10dp"
+                            android:text="Brake Fluid"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeFluidSpecs"
+                            android:layout_width="120sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_brakeFluidText"
+                            android:layout_marginStart="120dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeFluidVolume"
+                            android:layout_width="90sp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/main_showVehicle_brakeFluidText"
+                            android:layout_marginStart="240dp"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_brakeFluid"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_brakeFluidText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_brakeFluidRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_brakeFluidText"
+                            android:layout_marginStart="20dp" />
+
+                        //washerFluid
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_washerFluidText"
+                            android:layout_width="115sp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_showVehicle_brakeFluidRemarks"
+                            android:padding="10dp"
+                            android:text="Washer Fluid"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_washerFluid"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignBottom="@id/main_showVehicle_washerFluidText"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="30dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_washerFluidRemarks"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/main_showVehicle_washerFluidText"
+                            android:layout_marginStart="20dp" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                //Tire EquipmentID List
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/Gray"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="WHEEL WELL"
+                        android:textColor="@color/White" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="TIRE ID"
+                        android:textColor="@color/White" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/certificationicongreen"
+                        android:textSize="10sp"
+                        android:tooltipText="Certification Status" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/mileageicon"
+                        android:textSize="10sp"
+                        android:tooltipText="Mileage Status" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/treaddepthgreen"
+                        android:textSize="10sp"
+                        android:tooltipText="Tread Depth Status" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/tireage"
+                        android:textSize="10sp"
+                        android:tooltipText="Tire Age Status" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="REMARKS"
+                        android:textColor="@color/White" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    //Tire Label Column
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2.5"
+                        android:orientation="vertical">
+
+                        //Tire Label for 4 Wheeler
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_fourWheelerLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="Front Left:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="Front Right:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="Rear Left:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="Rear Right:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="Spare:" />
+
+                        </LinearLayout>
+
+                        //Tire Label for 22 Wheeler
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_twentyTwoWheelerLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 1:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 2:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 3:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 4:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 5:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 6:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 7:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 8:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 9:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 10:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 11:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 12:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 13:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 14:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 15:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 16:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 17:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 18:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 19:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 20:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 21:" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center_vertical"
+                                android:padding="5dp"
+                                android:text="TIRE 22:" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    //Tire ID Column
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireOneEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireTwoEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireThreeEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireFourEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireFiveEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoEquipmentID"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSixEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSevenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireEightEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireNineEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireElevenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwelveEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireThirteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireFourteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireFifteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSixteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSeventeenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireEighteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireNineteenEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyOneEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoEquipmentID"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    //Certification Icon
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireOneCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireTwoCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireThreeCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFourCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFiveCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoCertificationIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSevenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEightCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireElevenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwelveCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireThirteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFourteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFifteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSeventeenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEighteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineteenCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyOneCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoCertificationIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    //Mileage Icon
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireOneMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireTwoMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireThreeMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFourMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFiveMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoMileageIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSevenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEightMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireElevenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwelveMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireThirteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFourteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFifteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSeventeenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEighteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineteenMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyOneMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoMileageIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    //Tread Depth Icon
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireOneTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireTwoTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireThreeTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFourTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFiveTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoTreadDepthIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSevenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEightTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireElevenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwelveTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireThirteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFourteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFifteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSeventeenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEighteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineteenTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyOneTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoTreadDepthIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    //Tire Age Icon
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireOneTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireTwoTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireThreeTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFourTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <ImageView
+                            android:id="@+id/main_showVehicle_tireFiveTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoTireAgeIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSevenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEightTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireElevenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwelveTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireThirteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFourteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireFifteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSixteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireSeventeenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireEighteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireNineteenTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyOneTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                            <ImageView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoTireAgeIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    //Status Icon
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireOneTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireTwoTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireThreeTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireFourTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showVehicle_tireFiveTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:id="@+id/main_showVehicle_tiresSixToTwentyTwoTireStatusIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSixTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSevenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireEightTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireNineTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireElevenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwelveTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireThirteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireFourteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireFifteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSixteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireSeventeenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireEighteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireNineteenTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyOneTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/main_showVehicle_tireTwentyTwoTireStatusIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            //Show Tire
+
+            <LinearLayout
+                android:id="@+id/main_showTire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                //Status Buttons
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <Button
+                        android:id="@+id/main_showTireCertificationIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/certificationicongreen"
+                        android:textColor="@color/White"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/main_showTireMileageIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/mileageicon"
+                        android:textColor="@color/White"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/main_showTireTreadDepthIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/treaddepthorange"
+                        android:textColor="@color/White"
+                        android:textSize="25sp" />
+
+                    <Button
+                        android:id="@+id/main_showTireTireAgeIcon"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tireage"
+                        android:textColor="@color/White"
+                        android:textSize="25sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/blankicon"
+                        android:orientation="vertical"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/main_showTireInstalledOnIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/Black"
+                            android:gravity="center"
+                            android:textColor="@color/White"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/main_showTireWheelWellIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:textSize="18sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/main_showTireCertificationExpiryDateText"
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:padding="7dp"
+                        android:text="Certification\nExpiry Date"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireCertificationExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireCertificationExpiryDateText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireOwnerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireCertificationExpiryDateText"
+                        android:padding="7dp"
+                        android:text="Owner"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireOwner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireOwnerText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireSupplierText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireOwnerText"
+                        android:padding="7dp"
+                        android:text="Supplier"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireSupplierName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireSupplierText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireMakerText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireSupplierText"
+                        android:padding="7dp"
+                        android:text="Maker"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireMaker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireMakerText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireModelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireMakerText"
+                        android:padding="7dp"
+                        android:text="Model"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireModel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireModelText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireMileageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireModelText"
+                        android:padding="7dp"
+                        android:text="Mileage\n(km)"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireMileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireMileageText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTreadDepthText"
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireMileageText"
+                        android:padding="7dp"
+                        android:text="Tread\nDepth (mm)"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTreadDepth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireTreadDepthText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireInstalledOnText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireTreadDepthText"
+                        android:padding="7dp"
+                        android:text="Installed On"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireInstalledOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireInstalledOnText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireWheelWellText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireInstalledOnText"
+                        android:padding="7dp"
+                        android:text="Wheel Well"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireWheelWell"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireWheelWellText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireDateInServiceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireWheelWellText"
+                        android:padding="7dp"
+                        android:text="Date In Service"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireDateInService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireDateInServiceText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireDateOfManufactureText"
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireDateInServiceText"
+                        android:padding="7dp"
+                        android:text="Date Of Manufacture"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireDateOfManufacture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireDateOfManufactureText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireServiceTypeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireDateOfManufactureText"
+                        android:padding="7dp"
+                        android:text="Service Type"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireServiceType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireServiceTypeText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireWidthText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireServiceTypeText"
+                        android:padding="7dp"
+                        android:text="Width (mm)"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireWidth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireWidthText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireAspectRatioText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireWidthText"
+                        android:padding="7dp"
+                        android:text="Aspect Ratio"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireAspectRatio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireAspectRatioText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/main_showTireConstructionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireAspectRatioText"
+                        android:padding="7dp"
+                        android:text="@string/construction"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireConstruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/main_showTireConstructionText"
+                        android:layout_marginStart="120dp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireRimDiameterText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireConstructionText"
+                        android:padding="7dp"
+                        android:text="@string/rimDiameter"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireRimDiameter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireRimDiameterText"
+                        android:layout_alignBaseline="@id/main_showTireRimDiameterText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireLoadIndexText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireRimDiameterText"
+                        android:padding="7dp"
+                        android:text="Load Index"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireLoadIndex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireLoadIndexText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireSpeedRatingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireLoadIndexText"
+                        android:padding="7dp"
+                        android:text="Speed Rating"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireSpeedRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireSpeedRatingText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTreadRatingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireSpeedRatingText"
+                        android:padding="7dp"
+                        android:text="Tread Rating"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTreadRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireTreadRatingText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTractionRatingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireTreadRatingText"
+                        android:padding="7dp"
+                        android:text="Traction Rating"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTractionRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireTractionRatingText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTemperatureRatingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireTractionRatingText"
+                        android:padding="7dp"
+                        android:text="Temperature\nRating"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireTemperatureRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireTemperatureRatingText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireColdTirePressureSpecificationsText"
+                        android:layout_width="130sp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_showTireTemperatureRatingText"
+                        android:padding="7dp"
+                        android:text="Cold Tire\nPressure (psi)"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/main_showTireColdTirePressureSpecifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/main_showTireColdTirePressureSpecificationsText"
+                        android:layout_marginStart="120dp"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            //Location
+
+            <RelativeLayout
+                android:id="@+id/main_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/main_latitudeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="@string/Latitude"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/main_latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/main_latitudeText"
+                    android:layout_marginStart="120dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/main_longitudeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_latitudeText"
+                    android:padding="7dp"
+                    android:text="@string/Longitude"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/main_longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/main_longitudeText"
+                    android:layout_marginStart="120dp"
+                    android:textSize="15sp" />
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/main_mapSearch"-->
+                <!--                    android:layout_width="95dp"-->
+                <!--                    android:layout_height="70dp"-->
+                <!--                    android:layout_toStartOf="@id/main_updateLocation"-->
+                <!--                    android:text="@string/last_location" />-->
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/main_updateLocation"-->
+                <!--                    android:layout_width="95dp"-->
+                <!--                    android:layout_height="70dp"-->
+                <!--                    android:layout_alignParentEnd="true"-->
+                <!--                    android:text="@string/update_location"-->
+                <!--                    android:textColor="@color/Green" />-->
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+
+
+
+

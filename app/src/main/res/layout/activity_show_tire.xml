@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowTireActivity">
+
+    <ProgressBar
+        android:id="@+id/showTire_progress"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/showTire_assetCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/asset_code"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/showTire_assetCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/showTire_assetCodeText"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/showTire_serialNumberText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showTire_assetCodeText"
+        android:padding="5dp"
+        android:text="Serial Number"
+        android:textColor="@color/Blue"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/showTire_serialNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showTire_assetCodeText"
+        android:layout_alignBaseline="@id/showTire_serialNumberText"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/Blue"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/showTire_certificationStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:paddingTop="7dp"
+        android:text="Certification Status"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/showTire_certificationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showTire_certificationStatusText"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="5dp" />
+
+    <LinearLayout
+        android:id="@+id/showTire_graphics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showTire_serialNumberText"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/showTire_supplierNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Supplier"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_supplierName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/showTire_supplierLogo"
+                android:paddingLeft="7dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bquick_logo" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tire"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/showTire_topline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/showTire_graphics"
+        android:layout_marginTop="5dp"
+        android:background="@color/Black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showTire_topline">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/showTire_inspectionExpiryDateText"
+                android:layout_width="130sp"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Inspection Expiry Date"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_inspectionExpiryDate"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_inspectionExpiryDateText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_ownerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:text="Owner"
+                android:layout_below="@id/showTire_inspectionExpiryDateText"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_owner"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_ownerText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_makerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_ownerText"
+                android:padding="7dp"
+                android:text="Maker"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_maker"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_makerText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_modelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_makerText"
+                android:padding="7dp"
+                android:text="Model"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_model"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_modelText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_mileageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:layout_below="@id/showTire_modelText"
+                android:text="Mileage (km)"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_mileage"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_mileageText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_installedOnText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_mileageText"
+                android:padding="7dp"
+                android:text="Installed On"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_installedOn"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_installedOnText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_dateInServiceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_installedOnText"
+                android:text="Date In Service"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showTire_dateInService"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_dateInServiceText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_dateOfManufactureText"
+                android:layout_width="130sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_dateInServiceText"
+                android:text="Date Of Manufacture"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/showTire_dateOfManufacture"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_dateOfManufactureText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_serviceTypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_dateOfManufactureText"
+                android:padding="7dp"
+                android:text="Service Type"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_serviceType"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_serviceTypeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_widthText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_serviceTypeText"
+                android:padding="7dp"
+                android:text="Width"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_width"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_widthText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_aspectRationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_widthText"
+                android:padding="7dp"
+                android:text="Aspect Ratio"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_aspectRatio"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_aspectRationText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/showTire_constructionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_aspectRationText"
+                android:padding="7dp"
+                android:text="@string/construction"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_construction"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/showTire_constructionText"
+                android:layout_marginStart="130dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/showTire_rimDiameterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_constructionText"
+                android:padding="7dp"
+                android:text="@string/rimDiameter"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_rimDiameter"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_rimDiameterText"
+                android:layout_alignBaseline="@id/showTire_rimDiameterText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_loadIndexText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_rimDiameterText"
+                android:padding="7dp"
+                android:text="Load Index"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_loadIndex"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_loadIndexText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_speedRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_loadIndexText"
+                android:padding="7dp"
+                android:text="Speed Rating"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_speedRating"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_speedRatingText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_tirePressureRangeText"
+                android:layout_width="130sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_speedRatingText"
+                android:padding="7dp"
+                android:text="Tire Pressure Range"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_tirePressureRange"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_tirePressureRangeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_minimumThreadDepthText"
+                android:layout_width="130sp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_tirePressureRangeText"
+                android:padding="7dp"
+                android:text="Minimum Tread Depth"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_minimumThreadDepth"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/showTire_minimumThreadDepthText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_latitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_minimumThreadDepthText"
+                android:padding="7dp"
+                android:text="@string/Latitude"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/showTire_latitudeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_longitudeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showTire_latitudeText"
+                android:padding="7dp"
+                android:text="@string/Longitude"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/showTire_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/showTire_longitudeText"
+                android:layout_marginStart="130dp"
+                android:textSize="15sp" />
+
+
+            <Button
+                android:id="@+id/showTire_map_search"
+                android:layout_width="95dp"
+                android:layout_height="70dp"
+                android:layout_toStartOf="@id/showTire_updateLocation"
+                android:text="@string/last_location"
+                android:layout_below="@id/showTire_minimumThreadDepthText"/>
+
+            <Button
+                android:id="@+id/showTire_updateLocation"
+                android:layout_width="95dp"
+                android:layout_height="70dp"
+                android:text="@string/update_location"
+                android:textColor="@color/Green"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/showTire_minimumThreadDepthText"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

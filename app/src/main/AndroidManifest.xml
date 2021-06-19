@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="lawtechthai.com.ayunyanRun">
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- important line to get access to Internet -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name="lawtechthai.com.ayunyanRun.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.CreateVehicleActivity"
+            android:label="Create Vehicle"
+            android:parentActivityName="lawtechthai.com.ayunyanRun.MainActivity" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.EditVehicleActivity"
+            android:label="Certify"
+            android:parentActivityName="lawtechthai.com.ayunyanRun.MainActivity" />
+        <activity android:name="lawtechthai.com.ayunyanRun.CertificationRequestActivity" />
+        <activity android:name="lawtechthai.com.ayunyanRun.AssetListValidActivity" />
+        <activity android:name="lawtechthai.com.ayunyanRun.AssetListExpiredActivity" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.AssetCreateHelpActivity"
+            android:label="Help"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.AssetListActivity"
+            android:label="My List" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.ShowVehicleActivity"
+            android:label="Vehicle"
+            android:parentActivityName="lawtechthai.com.ayunyanRun.MainActivity" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.DriveVehicleActivity"
+            android:label="Drive Vehicle Activity" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.ShowTireActivity"
+            android:label="Show Tire Activity" />
+        <activity
+            android:name="lawtechthai.com.ayunyanRun.UserRegistrationActivity"
+            android:label="Registration" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" /> <!-- this fixes the bug -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <meta-data
+            android:name="android.nfc.action.TECH_DISCOVERED"
+            android:resource="@xml/nfc_tech_filter" />
+
+        <service
+            android:name="lawtechthai.com.ayunyanRun.FetchAddressIntentService"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AssetListActivity">
+
+    <item
+        android:id="@+id/assetListMenu_recertifyButton"
+        android:title="Recertify"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/assetListMenu_searchButton"
+        android:title="@string/search"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/assetListMenu_doneButton"
+        android:title="@string/done"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/assetListMenu_clearButton"
+        android:title="@string/clear"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/assetListMenu_showExpiredButton"
+        android:title="Show Only Expired"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/assetListMenu_showValidButton"
+        android:title="Show Only Valid"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/assetListMenu_showAllButton"
+        android:title="Show All"
+        app:showAsAction="ifRoom" />
+
+</menu>

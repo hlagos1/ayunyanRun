@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VeriApp</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="title_activity_login">ลงชื่อเข้าใช้</string>
+    <string name="prompt_email">" อีเมล์"</string>
+    <string name="prompt_password">รหัสผ่าน</string>
+    <string name="latitude">ละติจูด</string>
+    <string name="qr_code_scan">" คิวอาร์โค้ด"</string>
+    <string name="longitude">" ลองจิจูด"</string>
+    <string name="email">" อีเมล์"</string>
+    <string name="password">รหัสผ่าน</string>
+    <string name="size">size</string>
+    <string name="searching">ค้นหา</string>
+
+</resources>
